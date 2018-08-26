@@ -4,13 +4,13 @@ Proof-of-concept for an 'invisible' JavaScript payload.
 ## Overview
 It's possible to encode JavaScript as zero-width unicode characters and have it execute on page load. This is going to make it much harder to pick out potential malware by eye because most editors don't even show these characters:
 
-| Name                  | Codepoint | Character (between `][`)     |
-|-----------------------|-----------|------------------------------|
-| ZERO WIDTH SPACE      | U+200B    | \]&#8203;\[                  |
-| ZERO WIDTH NON-JOINER | U+200C    | \]&#8204;\[                  |
-| ZERO WIDTH JOINER     | U+200D    | \]&#8205;\[                  |
+| Name                  | Codepoint | Character (between `][`)     | Translation |
+|-----------------------|-----------|------------------------------|-------------|
+| ZERO WIDTH SPACE      | U+200B    | \]&#8203;\[                  | `0`         |
+| ZERO WIDTH NON-JOINER | U+200C    | \]&#8204;\[                  | `1`         |
+| ZERO WIDTH JOINER     | U+200D    | \]&#8205;\[                  | ` `         |
 
-The demo works by using these characters to encode a JavaScript payload in binary (`\u200c` and `\u200d` representing `0` and `1` and `\u200b` separating bytes). When the page loads, a little bit of code decodes this to ASCII and appends it to the page in the `onload` event handler of an `img` element. If you open up the code in most editors, all you will see is an empty string.
+The demo works by using these characters to encode a JavaScript payload in binary (`\u200b` and `\u200c` representing `0` and `1` and `\u200d` separating bytes). When the page loads, a little bit of code decodes this to ASCII and appends it to the page in the `onload` event handler of an `img` element. If you open up the code in most editors, all you will see is an empty string.
 
 ## Your Own Payloads
 You can generate your own page with your own custom 'invisible' script using the files in `/src/generator`. Pipe the JavaScript you'd like to embed to the `genpage.sh` script like this:
