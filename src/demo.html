@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+</head>
+<body>
+  <script>
+    var element = '<img src="demo.jpg" onerror="​‌‌​​​​‌‍​‌‌​‌‌​​‍​‌‌​​‌​‌‍​‌‌‌​​‌​‍​‌‌‌​‌​​‍​​‌​‌​​​‍​​‌​​‌‌‌‍​‌​​‌​​‌‍​‌‌‌​‌​​‍​‌‌‌​​‌‌‍​​‌​​​​​‍​‌‌​​‌‌​‍​‌‌‌​​‌​‍​‌‌​​‌​‌‍​‌‌​​‌​‌‍​​‌​​​​​‍​‌‌‌​​‌​‍​‌‌​​‌​‌‍​‌‌​​​​‌‍​‌‌​‌‌​​‍​​‌​​​​​‍​‌‌​​‌​‌‍​‌‌‌​​‌‌‍​‌‌‌​‌​​‍​‌‌​​​​‌‍​‌‌‌​‌​​‍​‌‌​​‌​‌‍​​‌​​​​‌‍​​‌​​‌‌‌‍​​‌​‌​​‌">';
+    setTimeout(function() {
+      document.body.innerHTML += element
+          .replace(/\u200b/g, '0')
+          .replace(/\u200c/g, '1')
+          .replace(/\u200d/g, ' ')
+          .replace(/\d+\s?/g, x => String.fromCharCode('0b' + x));
+      }, 2000);
+  </script>
+</body>
+</html>
