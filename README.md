@@ -12,14 +12,18 @@ It's possible to encode JavaScript as zero-width unicode characters and have it 
 
 The demo works by using these characters to encode a JavaScript payload in binary (`\u200b` and `\u200c` representing `0` and `1` and `\u200d` separating bytes). When the page loads, a little bit of code decodes this to ASCII and appends it to the page in the `onload` event handler of an `img` element. If you open up the code in most editors, all you will see is an empty string.
 
-## Your Own Payloads
+## Generation and Detection
 You can generate your own page with your own custom 'invisible' script using the files in `/src/generator`. Pipe the JavaScript you'd like to embed to the `genpage.sh` script like this:
 
 ```bash
 echo "alert('Its free real estate!')" | bash genpage.sh > mypage.html
 ```
 
-You'll obtain mypage.html which will show an alert, but try finding the alert code in the source!
+You'll obtain mypage.html which will show an alert, but try finding the alert code in the source! Now try piping a file to `/src/detection/detector.py` like so:
+
+```bash
+cat `../demo.html` | python detector.py
+```
 
 **Important note:** These scripts won't work on Windows because Powershell doesn't support UTF-8 output properly. You'll have to use them from another OS or a VM.
 
