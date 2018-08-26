@@ -22,7 +22,7 @@ echo "alert('Its free real estate!')" | bash genpage.sh > mypage.html
 You'll obtain mypage.html which will show an alert, but try finding the alert code in the source! Now try piping a file to `/src/detection/detector.py` like so:
 
 ```bash
-cat `../demo.html` | python detector.py
+cat ../demo.html | python detector.py
 ```
 
 **Important note:** These scripts won't work on Windows because Powershell doesn't support UTF-8 output properly. You'll have to use them from another OS or a VM.
