@@ -1,4 +1,4 @@
-# Encode input ASCII as binary.
+# Detect any forbidden characters in input.
 payload = input()
 forbidden = ['\u200b', '\u200c', '\u200d']
 alert = False
