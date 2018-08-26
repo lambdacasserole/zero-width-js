@@ -21,6 +21,8 @@ echo "alert('Its free real estate!')" | bash genpage.sh > mypage.html
 
 You'll obtain mypage.html which will show an alert, but try finding the alert code in the source!
 
+**Important note:** These scripts won't work on Windows because Powershell doesn't support UTF-8 output properly. You'll have to use them from another OS or a VM.
+
 ## Purpose
 This proof-of-concept has been put together as a supplement to [my blog post](https://blog.sauljohnson.com/you-will-pwn-yourself-with-your-own-clipboard) for the purpose of raising awareness of the dangers of copying and pasting code from the internet that might contain hidden malicious code. This research tool should not be abused, even though it can't do anything you couldn't just do using find/replace in [Notepad++](https://notepad-plus-plus.org/) and a free online ASCII to binary converter [like this one](https://www.binaryhexconverter.com/ascii-text-to-binary-converter).
 
