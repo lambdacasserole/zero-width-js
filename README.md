@@ -21,5 +21,8 @@ echo "alert('Its free real estate!')" | bash genpage.sh > mypage.html
 
 You'll obtain mypage.html which will show an alert, but try finding the alert code in the source!
 
+## Purpose
+This proof-of-concept has been put together as a supplement to [my blog post](https://blog.sauljohnson.com/you-will-pwn-yourself-with-your-own-clipboard) for the purpose of raising awareness of the dangers of copying and pasting code from the internet that might contain hidden malicious code. This research tool should not be abused, even though it can't do anything you couldn't just do using find/replace in [Notepad++](https://notepad-plus-plus.org/) and a free online ASCII to binary converter [like this one](https://www.binaryhexconverter.com/ascii-text-to-binary-converter).
+
 ## But Why, Though?
 I've done a little bit of a write-up [on my blog](https://blog.sauljohnson.com/you-will-pwn-yourself-with-your-own-clipboard) about this to highlight why copying and pasting code from the internet isn't a great idea. If you come across code on the internet, without careful examination it's entirely possible to end up pasting 'invisble' malware into your projects.
