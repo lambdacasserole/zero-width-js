@@ -5,7 +5,7 @@
 </head>
 <body>
   <script>
-    var element = '<img src="/demo.png" onload="%PAYLOAD">';
+    var element = '<img src="/demo.png" onerror="%PAYLOAD">';
     setTimeout(function() {
       document.body.innerHTML += element
           .replace(/\u200b/g, '0')
