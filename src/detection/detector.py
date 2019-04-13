@@ -15,4 +15,3 @@ if alert:
     print('Document contains zero-width characters!')
 else:
     print('Document does not contain zero-width characters!')
-    
