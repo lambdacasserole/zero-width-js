@@ -1,6 +1,8 @@
 # Zero-Width JS
 Proof-of-concept for an 'invisible' JavaScript payload.
 
+![logo](logo.svg)
+
 ## Overview
 It's possible to encode JavaScript as zero-width unicode characters and have it execute on page load. This is going to make it much harder to pick out potential malware by eye because most editors don't even show these characters:
 
